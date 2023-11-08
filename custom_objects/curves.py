@@ -1,7 +1,7 @@
 from sklearn import metrics, preprocessing, model_selection, linear_model
 import numpy as np
 import matplotlib.pyplot as plt
-from scratch_models import linear_regression
+from custom_objects import linear_regression
 
 
 def learning_curve(model, X, y):
