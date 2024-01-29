@@ -1,4 +1,5 @@
 from tensorflow import keras
+import tensorflow as tf
 
 
 class ResidualUnit(keras.layers.Layer):
@@ -56,3 +57,24 @@ class ResNet_34(keras.models.Model):
         for layer in self.main_layers:
             Z = layer(Z)
         return Z
+
+
+class LayerNormalization(keras.layers.Layer):
+    def __init__(self, units, activation, **kwargs):
+        super(LayerNormalization, self).__init__(**kwargs)
+        self.units = int(units)
+        self.activation = activation
+
+    def build(self, input_shape):
+        self.alpha = self.add_weight(shape=(input_shape[-1]), name='alpha', initializer='ones', trainable=True)
+        self.beta = self.add_weight(shape=(input_shape[-1]), name='beta', initializer='zeros', trainable=True)
+        super(LayerNormalization, self).build(input_shape)
+
+    def call(self, X):
+        mean, var = tf.nn.moments(X, axes=[-1], keepdims=True)
+        std = tf.sqrt(var + self.epsilon)
+        y = self.alpha * ((X - mean) / (std + keras.backend.epsilon)) + self.beta
+
+        if self.activation is not None:
+            return self.activation(y)
+        return y
