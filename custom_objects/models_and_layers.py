@@ -78,3 +78,7 @@ class LayerNormalization(keras.layers.Layer):
         if self.activation is not None:
             return self.activation(y)
         return y
+
+
+
+
