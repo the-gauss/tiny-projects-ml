@@ -80,5 +80,38 @@ class LayerNormalization(keras.layers.Layer):
         return y
 
 
+# NOT FOR GENERAL APPLICATION, ONLY USE FOR DATASETS IN large_movie_review.ipynb
+class TextVectorization(keras.layers.Layer):
+    def __init__(self, vocab_size, n_oob=50, **kwargs):
+        super().__init__(**kwargs)
+        self.vocab_size = vocab_size
+        self.vocab = None
+        self.n_oob = n_oob
+        self.lookup_table = None
 
+    def _get_vocab(self, data_sample):
+        vocab = set()
 
+        for text, _ in data_sample:
+            text = text.numpy()[0].decode('utf-8')
+            words = tf.strings.split(text, ' ')
+
+            for word in words:
+                vocab.add(word.numpy())
+                if len(vocab) >= self.vocab_size:
+                    break
+        return list(vocab)[:self.vocab_size]
+
+    def adapt(self, data_sample):
+        self.vocab = self._get_vocab(data_sample)
+        vocab_size = len(self.vocab)
+        indices = tf.range(vocab_size, dtype=tf.int64)
+        initializer = tf.lookup.KeyValueTensorInitializer(keys=self.vocab, values=indices,
+                                                          key_dtype=tf.string, value_dtype=tf.int64)
+        self.lookup_table = tf.lookup.StaticVocabularyTable(initializer, num_oov_buckets=self.n_oob)
+
+    def call(self, inputs):
+        tokenized_inputs = tf.strings.split(inputs, ' ').to_tensor()
+        outputs = self.lookup_table.lookup(tokenized_inputs)
+        outputs = tf.one_hot(outputs, depth=self.vocab_size + self.n_oob)
+        return outputs
