@@ -1,2 +1,6 @@
 # /rough/
 .vscode/settings.json
+**/*.pyc
+**/__pycache__/
+custom_objects/__pycache__/__init__.cpython-312.pyc
+custom_objects/__pycache__/decorators.cpython-312.pyc
