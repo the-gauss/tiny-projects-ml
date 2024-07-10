@@ -115,3 +115,26 @@ class TextVectorization(keras.layers.Layer):
         outputs = self.lookup_table.lookup(tokenized_inputs)
         outputs = tf.one_hot(outputs, depth=self.vocab_size + self.n_oob)
         return outputs
+    
+
+# Tokenizer from scratch for plain text, very basic, do not use for production
+class TokenizerFromScratch(keras.layers.Layer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def adapt(self, text):
+        text = text.lower()
+        text = text.replace('\n', ' ')
+        text = text.replace('\r', ' ')
+        text = text.replace('\t', ' ')
+
+        text = text.split(' ')
+
+        vocab, _ = tf.unique(tf.constant(text))
+        indices = tf.range(len(vocab), dtype=tf.int64)
+
+        init_table = tf.lookup.KeyValueTensorInitializer(vocab, indices)
+        self.lookup_table = tf.lookup.StaticVocabularyTable(init_table, num_oov_buckets=10)
+    
+    def call(self, text):
+        return self.lookup_table.lookup(text)
