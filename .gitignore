@@ -4,3 +4,4 @@
 **/__pycache__/
 custom_objects/__pycache__/__init__.cpython-312.pyc
 custom_objects/__pycache__/decorators.cpython-312.pyc
+movies/data/movie.csv
