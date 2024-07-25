@@ -7,3 +7,6 @@ custom_objects/__pycache__/decorators.cpython-312.pyc
 movies/data/movie.csv
 movies/data/dataset_prepared.tfrecord
 movies/saved_models/model_1_dnn.keras
+movies/saved_models/model_2_rnn.keras
+movies/saved_models/model_3_gru.keras
+movies/saved_models/vectorizer.keras
