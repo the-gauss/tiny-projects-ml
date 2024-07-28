@@ -1,4 +1,3 @@
-```markdown
 # BERT Inference Script
 
 This repository contains a script to perform inference using a modified version of BERT model for sequence classification. The script can handle various input types, including CSV files, text files, single strings, and lists of strings (only supported in Jupyter Notebook).
@@ -69,4 +68,3 @@ If you encounter any issues, please ensure that:
 - The input data file paths are correct.
 - The model weights file path is correct.
 - The required libraries are installed.
-```
