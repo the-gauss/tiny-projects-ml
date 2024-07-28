@@ -36,13 +36,8 @@ def is_file(input_string):
 # Preprocess the input to be fed to model for inference
 def prepare_data(input_data, tokenizer):
     
-    # For non-file inputs
-    if isinstance(input_data, str):
-        texts = [input_data]
-    elif isinstance(input_data, list):
+    if isinstance(input_data, list):
         texts = input_data
-    
-    # For file inputs
     elif is_file(input_data):
         if input_data.endswith('.csv'):
             df = pd.read_csv(input_data)
@@ -53,6 +48,9 @@ def prepare_data(input_data, tokenizer):
                 texts = [line.strip() for line in texts]
         else:
             raise ValueError("Unsupported file format. Please provide a .csv or .txt file.")
+    
+    elif isinstance(input_data, str):
+        texts = [input_data]
     else:
         raise ValueError("Unsupported input type. Please provide a file path, a single string, or a list of strings.")
 
