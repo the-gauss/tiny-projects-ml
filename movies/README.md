@@ -62,6 +62,8 @@ The `inference.py` script performs the following steps:
 3. **Data Preparation**: Prepares the input data for the model. Supports CSV files, text files, single strings, and lists of strings (only in Jupyter Notebooks).
 4. **Prediction**: Runs the model on the preprocessed data and prints the predictions.
 
+**The predictions will be a list of binary integer labels, 0 for negative and 1 for positive review. E.g. [1 1 0] represents first two reviews were positive while the last was negative.**
+
 ## Troubleshooting
 
 If you encounter any issues, please ensure that:
