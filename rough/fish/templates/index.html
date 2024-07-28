@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Weight Predictor</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <h1>Fish Weight Predictor</h1>
+    <form id="predictForm">
+        <label for="species">Species:</label>
+        <select id="species" name="species">
+            <option value="Bream">Bream</option>
+            <option value="Roach">Roach</option>
+            <option value="Whitefish">Whitefish</option>
+            <option value="Parkki">Parkki</option>
+            <option value="Perch">Perch</option>
+            <option value="Pike">Pike</option>
+            <option value="Smelt">Smelt</option>
+        </select><br>
+
+        <label for="Length1">Length1:</label>
+        <input type="number" id="Length1" name="Length1" step="any"><br>
+
+        <label for="Length2">Length2:</label>
+        <input type="number" id="Length2" name="Length2" step="any"><br>
+
+        <label for="Length3">Length3:</label>
+        <input type="number" id="Length3" name="Length3" step="any"><br>
+
+        <label for="Height">Height:</label>
+        <input type="number" id="Height" name="Height" step="any"><br>
+
+        <label for="Width">Width:</label>
+        <input type="number" id="Width" name="Width" step="any"><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('predictForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const species = document.getElementById('species').value;
+            const Length1 = document.getElementById('Length1').value;
+            const Length2 = document.getElementById('Length2').value;
+            const Length3 = document.getElementById('Length3').value;
+            const Height = document.getElementById('Height').value;
+            const Width = document.getElementById('Width').value;
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    Species: species,
+                    Length1: Length1,
+                    Length2: Length2,
+                    Length3: Length3,
+                    Height: Height,
+                    Width: Width
+                })
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerText = `Predicted Weight: ${result.prediction}`;
+        });
+    </script>
+</body>
+</html>
