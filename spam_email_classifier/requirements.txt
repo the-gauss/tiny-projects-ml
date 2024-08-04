@@ -1,0 +1,6 @@
+Flask==2.1.2
+scikit-learn==1.2.2
+numpy==1.23.1
+nltk==3.7
+urlextract==1.7.0
+email==6.0.0
