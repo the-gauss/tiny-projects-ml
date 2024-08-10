@@ -11,3 +11,6 @@ movies/saved_models/model_2_rnn.keras
 movies/saved_models/model_3_gru.keras
 movies/saved_models/vectorizer.keras
 movies/saved_models/model_4_bert_weights.h5
+american-sign-language/A3 Rubric.pdf
+american-sign-language/data/sign_mnist_test.csv
+american-sign-language/data/sign_mnist_train.csv
