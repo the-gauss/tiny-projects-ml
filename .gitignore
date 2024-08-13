@@ -14,3 +14,5 @@ movies/saved_models/model_4_bert_weights.h5
 american-sign-language/A3 Rubric.pdf
 american-sign-language/data/sign_mnist_test.csv
 american-sign-language/data/sign_mnist_train.csv
+american-sign-language/saved_models/cnn_model_2.keras
+american-sign-language/saved_models/dnn_model_2.keras
