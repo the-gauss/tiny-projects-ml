@@ -18,4 +18,5 @@ american-sign-language/saved_models/cnn_model_2.keras
 american-sign-language/saved_models/dnn_model_2.keras
 american-sign-language/logs
 american-sign-language/saved_models/model_5.keras
+.idea
 mylogs/
