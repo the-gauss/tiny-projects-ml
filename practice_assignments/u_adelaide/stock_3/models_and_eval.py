@@ -2,6 +2,7 @@ from tensorflow.keras.layers import SimpleRNN
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Bidirectional, LSTM, Dense, Input, Conv1D, Flatten
 from tensorflow.keras.optimizers import Adam
+import numpy as np
 
 # Define a function to build the SimpleRNN model
 def build_simple_rnn_model(input_shape, output_dim, units=64, learning_rate=0.001):
