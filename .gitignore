@@ -20,3 +20,4 @@ american-sign-language/logs
 american-sign-language/saved_models/model_5.keras
 .idea
 mylogs/
+oxford_102_flowers/data/
