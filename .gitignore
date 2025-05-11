@@ -22,3 +22,4 @@ american-sign-language/saved_models/model_5.keras
 mylogs/
 oxford_102_flowers/data/
 digit_recognition/data/mnist/mnist.pkl.gz
+nlp-from-scratch/data
