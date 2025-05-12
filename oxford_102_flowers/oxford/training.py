@@ -1,5 +1,5 @@
 import json
-import torch
+import torch # type: ignore
 
 class BaseLine(torch.nn.Module):
     def __init__(self, n_layers = 2 ,activation = torch.nn.ReLU()):
