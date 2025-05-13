@@ -23,3 +23,4 @@ mylogs/
 oxford_102_flowers/data/
 digit_recognition/data/mnist/mnist.pkl.gz
 nlp-from-scratch/data
+identifier.sqlite
