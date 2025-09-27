@@ -1,28 +1,30 @@
-# /rough/
+# deep-learning/rough/
 .vscode/settings.json
 **/*.pyc
 **/__pycache__/
-custom_objects/__pycache__/__init__.cpython-312.pyc
-custom_objects/__pycache__/decorators.cpython-312.pyc
-movies/data/movie.csv
-movies/data/dataset_prepared.tfrecord
-movies/saved_models/model_1_dnn.keras
-movies/saved_models/model_2_rnn.keras
-movies/saved_models/model_3_gru.keras
-movies/saved_models/vectorizer.keras
-movies/saved_models/model_4_bert_weights.h5
-american-sign-language/A3 Rubric.pdf
-american-sign-language/data/sign_mnist_test.csv
-american-sign-language/data/sign_mnist_train.csv
-american-sign-language/saved_models/cnn_model_2.keras
-american-sign-language/saved_models/dnn_model_2.keras
-american-sign-language/logs
-american-sign-language/saved_models/model_5.keras
+deep-learning/custom_objects/__pycache__/__init__.cpython-312.pyc
+deep-learning/custom_objects/__pycache__/decorators.cpython-312.pyc
+deep-learning/movies/data/movie.csv
+deep-learning/movies/data/dataset_prepared.tfrecord
+deep-learning/movies/saved_models/model_1_dnn.keras
+deep-learning/movies/saved_models/model_2_rnn.keras
+deep-learning/movies/saved_models/model_3_gru.keras
+deep-learning/movies/saved_models/vectorizer.keras
+deep-learning/movies/saved_models/model_4_bert_weights.h5
+deep-learning/american-sign-language/A3 Rubric.pdf
+deep-learning/american-sign-language/data/sign_mnist_test.csv
+deep-learning/american-sign-language/data/sign_mnist_train.csv
+deep-learning/american-sign-language/saved_models/cnn_model_2.keras
+deep-learning/american-sign-language/saved_models/dnn_model_2.keras
+deep-learning/american-sign-language/logs
+deep-learning/american-sign-language/saved_models/model_5.keras
 .idea
 mylogs/
-oxford_102_flowers/data/
-digit_recognition/data/mnist/mnist.pkl.gz
-nlp-from-scratch/data
+deep-learning/oxford_102_flowers/data/
+deep-learning/digit_recognition/data/mnist/mnist.pkl.gz
+deep-learning/nlp-from-scratch/data
 identifier.sqlite
 **/data/*
-cifar/model.pth
+deep-learning/cifar/model.pth
+.env
+!.env.example
