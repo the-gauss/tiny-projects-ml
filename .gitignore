@@ -28,3 +28,6 @@ identifier.sqlite
 deep-learning/cifar/model.pth
 .env
 !.env.example
+cifar/model.pth
+deep-learning/nlp-from-scratch/names
+deep-learning/nlp-from-scratch/eng-fra.txt
