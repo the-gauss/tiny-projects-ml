@@ -1,5 +1,5 @@
 # deep-learning/rough/
-.vscode/settings.json
+.vscode/
 **/*.pyc
 **/__pycache__/
 deep-learning/custom_objects/__pycache__/__init__.cpython-312.pyc
@@ -18,7 +18,7 @@ deep-learning/american-sign-language/saved_models/cnn_model_2.keras
 deep-learning/american-sign-language/saved_models/dnn_model_2.keras
 deep-learning/american-sign-language/logs
 deep-learning/american-sign-language/saved_models/model_5.keras
-.idea
+.idea/
 mylogs/
 deep-learning/oxford_102_flowers/data/
 deep-learning/digit_recognition/data/mnist/mnist.pkl.gz
